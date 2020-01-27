@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 // @route   POST api/contacts
 // @desc    add new contacts
 // @access  Private
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   res.send('add contacts');
 });
 
