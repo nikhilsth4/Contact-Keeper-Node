@@ -385,6 +385,10 @@ table th {
 }
 
 /* Animation (Add After) */
+.remove-btn {
+  margin-right: 0.5rem;
+}
+
 .item-enter {
   opacity: 0;
 }
@@ -397,7 +401,7 @@ table th {
 }
 .item-exit-active {
   opacity: 0;
-  transition: opacity 1000ms ease-in;
+  transition: opacity 10s00ms ease-in;
 }
 
 /* Mobile Styles */
