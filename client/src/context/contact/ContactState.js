@@ -36,7 +36,8 @@ const ContactState = props => {
         phone: '422-1212-121-2121',
         type: 'professional'
       }
-    ]
+    ],
+    current: null
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
@@ -48,13 +49,21 @@ const ContactState = props => {
   };
 
   //DELETE_CONTACT
-
+  const deleteContact = id => {
+    dispatch({ type: DELETE_CONTACT, payload: id });
+  };
   //SET_CURRENT_CONTACT
-
+  const setCurrent = contact => {
+    dispatch({ type: SET_CURRENT, payload: contact });
+  };
   //CLEAR_CURRENT_CONTACT
-
+  const clearCurrent = () => {
+    dispatch({ type: CLEAR_CURRENT });
+  };
   //UPDATE_CONTACT
-
+  const updateContact = contact => {
+    dispatch({ type: UPDATE_CURRENT, payload: contact });
+  };
   //FILTER_CONTACTS
 
   //CLEAR_FILTER
@@ -63,7 +72,12 @@ const ContactState = props => {
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
-        addContact
+        current: state.current,
+        addContact,
+        deleteContact,
+        setCurrent,
+        clearCurrent,
+        updateContact
       }}
     >
       {props.children}
